@@ -1,0 +1,30 @@
+@font-face{
+    font-family: 'MRTB';
+    src: url('MRTB.TTF');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'MRTL';
+    src: url('MRTL.TTF');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'ZXLIN';
+    src: url('ZXLIN.TTF');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'CSWU';
+    src: url('CSWU.TTF');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'ALL';
+    src: url('ALL.TTF');
+    font-weight: normal;
+    font-style: normal;
+}
