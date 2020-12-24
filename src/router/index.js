@@ -152,6 +152,17 @@ const routes = [
           title: '校快办-版本信息'
         }
       },
+      {
+        path: 'DJDL',
+        name: 'DJDL',
+        component: () => import('../views/myself/myselfDJDL.vue'),
+        meta: {
+          keepAlive: true,
+          scoll:{x:0,y: 0},
+          height:0,
+          title: '校快办-登录'
+        }
+      }
     ]
   }
 ]

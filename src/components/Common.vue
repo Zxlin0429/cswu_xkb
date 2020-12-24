@@ -7,6 +7,7 @@
       institute: [], //二级学校
       class: "", //专业班级
       score: 32, //积分
+      login: false, //登录状态
   };
   export default {
     User

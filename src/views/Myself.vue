@@ -54,7 +54,16 @@
               </van-cell>
             </router-link>
           </li>
-          <li>
+          <li v-if="!loginShow">
+            <router-link :to="{ name: 'DJDL' }">
+              <van-cell icon="add-o" title="点击登录">
+                <template #right-icon>
+                  <van-icon name="arrow" class="arrow" />
+                </template>
+              </van-cell>
+            </router-link>
+          </li>
+          <li v-if="loginShow" @click="delLogin">
             <van-cell icon="close" title="退出登录">
               <template #right-icon>
                 <van-icon name="arrow" class="arrow" />
@@ -78,22 +87,60 @@
 <script>
 import $ from "jquery";
 import Vue from "vue";
+import { Dialog } from "vant";
 import { Cell, CellGroup } from "vant";
 Vue.use(Cell);
 Vue.use(CellGroup);
+Vue.use(Dialog);
 export default {
   name: "Myself",
   mounted() {
+    this.loginShow = this.Common.User.login;
     $(".myself .page3 .page3_body").css({
-        height: $(window).height() - 50 + "px",
-      });
+      height: $(window).height() - 50 + "px",
+    });
+    //myself页面子页面显示控制
     if (this.$route.path == "/Myself") {
       $(".myself .page3").css("display", "none");
     }
     if (this.$route.path == "/Myself/WDJF") {
+      if (!this.Common.User.login) {
+        Dialog.confirm({
+          title: "提示",
+          message: "您未登录，是否登录？",
+        })
+          .then(() => {
+            // on confirm
+            $(".myself .page3").css("display", "block");
+            this.$router.push("/Myself/DJDL");
+          })
+          .catch(() => {
+            // on cancel
+            this.$router.push("/Myself");
+            return false;
+          });
+        return false;
+      }
       $(".myself .page3").css("display", "block");
     }
     if (this.$route.path == "/Myself/GRXX") {
+      if (!this.Common.User.login) {
+        Dialog.confirm({
+          title: "提示",
+          message: "您未登录，是否登录？",
+        })
+          .then(() => {
+            // on confirm
+            $(".myself .page3").css("display", "block");
+            this.$router.push("/Myself/DJDL");
+          })
+          .catch(() => {
+            // on cancel
+            this.$router.push("/Myself");
+            return false;
+          });
+        return false;
+      }
       $(".myself .page3").css("display", "block");
     }
     if (this.$route.path == "/Myself/LXWM") {
@@ -102,8 +149,25 @@ export default {
     if (this.$route.path == "/Myself/BBXX") {
       $(".myself .page3").css("display", "block");
     }
+    if (this.$route.path == "/Myself/DJDL") {
+      $(".myself .page3").css("display", "block");
+    }
   },
   methods: {
+    delLogin() {
+      Dialog.confirm({
+        title: "退出",
+        message: "确认退出？",
+      })
+        .then(() => {
+          // on confirm
+          this.Common.User.login = false;
+          this.loginShow = this.Common.User.login;
+        })
+        .catch(() => {
+          // on cancel
+        });
+    },
     myself_page3_i() {
       this.$router.push("/Myself");
     },
@@ -129,20 +193,57 @@ export default {
       });
       //更改vue的title
       document.title = this.$router.history.current.meta.title;
-      //home页面子页面显示控制
+      //myself页面子页面显示控制
       if (this.$route.path == "/Myself") {
         $(".myself .page3").css("display", "none");
       }
       if (this.$route.path == "/Myself/WDJF") {
+        if (!this.Common.User.login) {
+          Dialog.confirm({
+            title: "提示",
+            message: "您未登录，是否登录？",
+          })
+            .then(() => {
+              // on confirm
+              $(".myself .page3").css("display", "block");
+              this.$router.push("/Myself/DJDL");
+            })
+            .catch(() => {
+              // on cancel
+              this.$router.push("/Myself");
+              return false;
+            });
+          return false;
+        }
         $(".myself .page3").css("display", "block");
       }
       if (this.$route.path == "/Myself/GRXX") {
+        if (!this.Common.User.login) {
+          Dialog.confirm({
+            title: "提示",
+            message: "您未登录，是否登录？",
+          })
+            .then(() => {
+              // on confirm
+              $(".myself .page3").css("display", "block");
+              this.$router.push("/Myself/DJDL");
+            })
+            .catch(() => {
+              // on cancel
+              this.$router.push("/Myself");
+              return false;
+            });
+          return false;
+        }
         $(".myself .page3").css("display", "block");
       }
       if (this.$route.path == "/Myself/LXWM") {
         $(".myself .page3").css("display", "block");
       }
       if (this.$route.path == "/Myself/BBXX") {
+        $(".myself .page3").css("display", "block");
+      }
+      if (this.$route.path == "/Myself/DJDL") {
         $(".myself .page3").css("display", "block");
       }
       //保存用户路由页面的浏览位置
@@ -161,7 +262,9 @@ export default {
     },
   },
   data() {
-    return {};
+    return {
+      loginShow: false,
+    };
   },
 };
 </script>
