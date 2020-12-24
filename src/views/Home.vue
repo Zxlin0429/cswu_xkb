@@ -36,7 +36,7 @@
         </div>
       </router-link>
 
-      <a href="http://ky.cswu.cn:8083/">
+      <router-link :to="{ name: 'JJCG' }">
         <div class="li_page2_3">
           <van-image
             round
@@ -44,9 +44,9 @@
             height="60px"
             src="http://zxlin.top/img/20201216/home_page2_3.jpg"
           />
-          <div class="txt">VR城管</div>
+          <div class="txt">聚焦城管</div>
         </div>
-      </a>
+      </router-link>
       <div class="i" @click="i_view_page2_home" v-show="show_view_page2_home">
         <van-icon name="arrow-left" />
       </div>
@@ -80,6 +80,24 @@
 import $ from "jquery";
 export default {
   name: "Home",
+  mounted() {
+    if (this.$route.path == "/") {
+      $(".home .page2 .i").css("display", "none");
+      $(".home .page2 .view").css("display", "none");
+    }
+    if (this.$route.path == "/QNZS") {
+      $(".home .page2 .i").css("display", "block");
+      $(".home .page2 .view").css("display", "block");
+    }
+    if (this.$route.path == "/TJZJ") {
+      $(".home .page2 .i").css("display", "block");
+      $(".home .page2 .view").css("display", "block");
+    }
+    if (this.$route.path == "/JJCG") {
+      $(".home .page2 .i").css("display", "block");
+      $(".home .page2 .view").css("display", "block");
+    }
+  },
   methods: {
     i_view_page2_home() {
       this.$router.push("/");
@@ -114,6 +132,10 @@ export default {
         $(".home .page2 .view").css("display", "block");
       }
       if (this.$route.path == "/TJZJ") {
+        $(".home .page2 .i").css("display", "block");
+        $(".home .page2 .view").css("display", "block");
+      }
+      if (this.$route.path == "/JJCG") {
         $(".home .page2 .i").css("display", "block");
         $(".home .page2 .view").css("display", "block");
       }

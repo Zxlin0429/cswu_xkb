@@ -3,7 +3,12 @@
     <div class="page1">
       <div class="content">
         <div class="headPicture">
-          <van-image round width="80px" height="80px" :src="this.Common.User.headPicture" />
+          <van-image
+            round
+            width="80px"
+            height="80px"
+            :src="this.Common.User.headPicture"
+          />
         </div>
         <div class="wxName">
           {{ this.Common.User.wxName }}
@@ -59,9 +64,9 @@
         </ul>
       </div>
     </div>
-    <div class="page page3" style="display: none;">
+    <div class="page page3" style="display: none">
       <div class="page3_top">
-        <van-icon name="arrow-left" @click="myself_page3_i"/>
+        <van-icon name="arrow-left" @click="myself_page3_i" />
       </div>
       <div class="page3_body" @scroll="activityScrollMyself">
         <router-view></router-view>
@@ -71,15 +76,36 @@
 </template>
 
 <script>
-import $ from 'jquery'
+import $ from "jquery";
 import Vue from "vue";
 import { Cell, CellGroup } from "vant";
 Vue.use(Cell);
 Vue.use(CellGroup);
 export default {
+  name: "Myself",
+  mounted() {
+    $(".myself .page3 .page3_body").css({
+        height: $(window).height() - 50 + "px",
+      });
+    if (this.$route.path == "/Myself") {
+      $(".myself .page3").css("display", "none");
+    }
+    if (this.$route.path == "/Myself/WDJF") {
+      $(".myself .page3").css("display", "block");
+    }
+    if (this.$route.path == "/Myself/GRXX") {
+      $(".myself .page3").css("display", "block");
+    }
+    if (this.$route.path == "/Myself/LXWM") {
+      $(".myself .page3").css("display", "block");
+    }
+    if (this.$route.path == "/Myself/BBXX") {
+      $(".myself .page3").css("display", "block");
+    }
+  },
   methods: {
-    myself_page3_i(){
-      this.$router.push('/Myself');
+    myself_page3_i() {
+      this.$router.push("/Myself");
     },
     activityScrollMyself() {
       //保存用户路由页面的浏览位置
@@ -98,24 +124,26 @@ export default {
   },
   watch: {
     $route() {
-      $(".myself .page3 .page3_body").css({ height: $(window).height() - 50 + "px" });
+      $(".myself .page3 .page3_body").css({
+        height: $(window).height() - 50 + "px",
+      });
       //更改vue的title
       document.title = this.$router.history.current.meta.title;
       //home页面子页面显示控制
-      if(this.$route.path == '/Myself'){
-        $(".myself .page3").css("display","none");
+      if (this.$route.path == "/Myself") {
+        $(".myself .page3").css("display", "none");
       }
-      if(this.$route.path == '/Myself/WDJF'){
-        $(".myself .page3").css("display","block");
+      if (this.$route.path == "/Myself/WDJF") {
+        $(".myself .page3").css("display", "block");
       }
-      if(this.$route.path == '/Myself/GRXX'){
-        $(".myself .page3").css("display","block");
+      if (this.$route.path == "/Myself/GRXX") {
+        $(".myself .page3").css("display", "block");
       }
-      if(this.$route.path == '/Myself/LXWM'){
-        $(".myself .page3").css("display","block");
+      if (this.$route.path == "/Myself/LXWM") {
+        $(".myself .page3").css("display", "block");
       }
-      if(this.$route.path == '/Myself/BBXX'){
-        $(".myself .page3").css("display","block");
+      if (this.$route.path == "/Myself/BBXX") {
+        $(".myself .page3").css("display", "block");
       }
       //保存用户路由页面的浏览位置
       if (
@@ -133,9 +161,7 @@ export default {
     },
   },
   data() {
-    return {
-      
-    };
+    return {};
   },
 };
 </script>
@@ -227,7 +253,7 @@ export default {
   right: 1rem;
   font-size: 13px;
 }
-.myself .page3{
+.myself .page3 {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -236,20 +262,20 @@ export default {
   background-color: #fbfbfb;
   z-index: 10;
 }
-.myself .page3 .page3_top{
+.myself .page3 .page3_top {
   position: fixed;
   width: 100%;
   height: 50px;
-  background: linear-gradient(to right,#5b86e5, #36d1dc);
+  background: linear-gradient(to right, #5b86e5, #36d1dc);
 }
-.myself .page3 .page3_top i{
+.myself .page3 .page3_top i {
   color: #fff;
   font-size: 20px;
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
 }
-.myself .page3 .page3_body{
+.myself .page3 .page3_body {
   position: fixed;
   top: 50px;
   left: 0;

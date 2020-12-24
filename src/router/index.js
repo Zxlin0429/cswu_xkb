@@ -37,7 +37,31 @@ const routes = [
           height:0,
           title: '校快办-团聚指尖'
         },
-      }
+      },
+      {
+        path: 'JJCG',
+        name: 'JJCG',
+        component: () => import('../views/home/HomeJJCG.vue'),
+        meta: {
+          keepAlive: true,
+          scoll:{x:0,y: 0},
+          height:0,
+          title: '校快办-聚焦城管'
+        },
+        children: [
+          {
+            path: 'SP',
+            name: 'SP',
+            component: () => import('../views/home/HomeQNZS.vue'),
+            meta: {
+              keepAlive: true,
+              scoll:{x:0,y: 0},
+              height:0,
+              title: '校快办-聚焦城管'
+            }
+          }
+        ]
+      },
     ]
   },
   {

@@ -39,14 +39,14 @@ export default {
       HomeTJZJPage3Li: [
         {
           url: "http://mp.weixin.qq.com/s?__biz=MzI2MzA1MjIyNg==&mid=504852376&idx=1&sn=850779cecf72379b3eb345e91855fffc&chksm=71a2013546d588237f621ef504a1818d9b1dad9555082e34a520d9235c94bafde38f3d65386a&mpshare=1&scene=23&srcid=12211cKAu97D1Os1mbOK3b4S&sharer_sharetime=1608514132397&sharer_shareid=f275983526fc34ace88d2215c18a7d7a#rd",
-          img: "https://mmbiz.qpic.cn/mmbiz_jpg/ESZXy0HjMqbFwbaNouFKicMjibJ6QDm4TZwDRQAOE4DiaINf62dTgOUfPiaYiacsy61dPknSBsoib99ibCceyibicCiaLRcQ/640",
+          // img: "https://mmbiz.qpic.cn/mmbiz_jpg/ESZXy0HjMqbFwbaNouFKicMjibJ6QDm4TZwDRQAOE4DiaINf62dTgOUfPiaYiacsy61dPknSBsoib99ibCceyibicCiaLRcQ/640",
           txt: "团聚指尖|聚焦团委",
           from: "校团委",
           time: "2018-09-06",
         },
         {
           url: "http://mp.weixin.qq.com/s?__biz=MzI2MzA1MjIyNg==&mid=504852381&idx=1&sn=bb27ff40e07e3a86aff1c70d3c001131&chksm=71a2013046d58826c92545198974c49b90ad50d404c749154a2d739c62372410c2787f31c7b8&mpshare=1&scene=23&srcid=1221UK0w5mineHBOTA4VqLWh&sharer_sharetime=1608514579676&sharer_shareid=f275983526fc34ace88d2215c18a7d7a#rd",
-          img: "https://mmbiz.qpic.cn/mmbiz_jpg/ESZXy0HjMqbFwbaNouFKicMjibJ6QDm4TZTNUUibzNwzEot8tpLVDdDzultN0naqTKV52wun9oDNQdOuYkxh7bhGg/640",
+          // img: "https://mmbiz.qpic.cn/mmbiz_jpg/ESZXy0HjMqbFwbaNouFKicMjibJ6QDm4TZTNUUibzNwzEot8tpLVDdDzultN0naqTKV52wun9oDNQdOuYkxh7bhGg/640",
           txt: "团聚指尖|学生会这些事",
           from: "校团委",
           time: "2018-09-06",
