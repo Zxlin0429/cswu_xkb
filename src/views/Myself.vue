@@ -105,6 +105,8 @@ export default {
     }
     if (this.$route.path == "/Myself/WDJF") {
       if (!this.Common.User.login) {
+        $(".myself .page3").css("display", "none");
+        this.$router.push("/Myself");
         Dialog.confirm({
           title: "提示",
           message: "您未登录，是否登录？",
@@ -125,6 +127,8 @@ export default {
     }
     if (this.$route.path == "/Myself/GRXX") {
       if (!this.Common.User.login) {
+        $(".myself .page3").css("display", "none");
+        this.$router.push("/Myself");
         Dialog.confirm({
           title: "提示",
           message: "您未登录，是否登录？",
@@ -199,6 +203,8 @@ export default {
       }
       if (this.$route.path == "/Myself/WDJF") {
         if (!this.Common.User.login) {
+          $(".myself .page3").css("display", "none");
+          this.$router.push("/Myself");
           Dialog.confirm({
             title: "提示",
             message: "您未登录，是否登录？",
@@ -219,6 +225,8 @@ export default {
       }
       if (this.$route.path == "/Myself/GRXX") {
         if (!this.Common.User.login) {
+          $(".myself .page3").css("display", "none");
+          this.$router.push("/Myself");
           Dialog.confirm({
             title: "提示",
             message: "您未登录，是否登录？",
