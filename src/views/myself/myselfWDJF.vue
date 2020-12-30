@@ -78,9 +78,13 @@
 .myselfWDJF .pg1 {
   position: relative;
   width: 100%;
-  height: 210px;
+  height: 216px;
   color: #fff;
-  background: linear-gradient(to right, #5b86e5, #36d1dc);
+  background-image: url("../../assets/myself/myself_bg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 266px;
+  -moz-background-size: 100% 266px;
+  background-position: 0% 100%;
   text-align: center;
   font-size: 20px;
 }

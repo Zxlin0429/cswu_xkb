@@ -73,7 +73,31 @@ const routes = [
       scoll:{x:0,y: 0},
       height:0,
       title: '校快办-校快办'
-    }
+    },
+    children: [
+      {
+        path: 'QNDXX',
+        name: 'QNDXX',
+        component: () => import('../views/work/WorkQNDXX.vue'),
+        meta: {
+          keepAlive: true,
+          scoll:{x:0,y: 0},
+          height:0,
+          title: '校快办-青年大学习'
+        }
+      },
+      {
+        path: 'QXY',
+        name: 'QXY',
+        component: () => import('../views/work/WorkQXY.vue'),
+        meta: {
+          keepAlive: true,
+          scoll:{x:0,y: 0},
+          height:0,
+          title: '校快办-团聚指尖'
+        },
+      },
+    ]
   },
   {
     path: '/Group',

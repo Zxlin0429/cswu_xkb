@@ -6,7 +6,7 @@
           round
           width="60px"
           height="60px"
-          src="http://zxlin.top/img/20201216/home_page2_1.jpg"
+          :src="this.$parent.modeImgList[0]"
         />
         <div class="t">青年之声</div>
       </div>
@@ -20,7 +20,7 @@
       >
         <a :href="i.url">
             <van-image v-if="i.img" :src="i.img" />
-            <van-image v-if="!i.img" src="http://zxlin.top/img/20201216/home_qnzs_qnzs.jpg" />
+            <van-image v-if="!i.img" :src="ImgList" />
           <div class="txt">{{ i.txt }}</div>
           <div class="ico">
             <span>{{ i.from }}</span>
@@ -36,6 +36,9 @@
 export default {
   data() {
     return {
+      ImgList: //模块图片
+        require('../../assets/home/home_qnzs_qnzs.jpg')
+      ,
       HomeQNZSPage3Li: [
         {
           url: "http://mp.weixin.qq.com/s?__biz=MzI2MzA1MjIyNg==&mid=2652353171&idx=1&sn=9ca049ddb939fd192733d99544fc1be7&chksm=f1a2dc3ec6d55528c3b4bb95a33448657960f167a2f3058b298657111452a191944592ee4856&mpshare=1&scene=23&srcid=1221b4yPEeSqJNCquEtCPVO4&sharer_sharetime=1608516948346&sharer_shareid=f275983526fc34ace88d2215c18a7d7a#rd",

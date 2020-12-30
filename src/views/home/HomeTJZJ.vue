@@ -6,7 +6,7 @@
           round
           width="60px"
           height="60px"
-          src="http://zxlin.top/img/20201216/home_page2_2.jpg"
+          :src="this.$parent.modeImgList[1]"
         />
         <div class="t">团聚指尖</div>
       </div>
@@ -20,7 +20,7 @@
       >
         <a :href="i.url">
             <van-image v-if="i.img" :src="i.img" />
-            <van-image v-if="!i.img" src="http://zxlin.top/img/20201216/home_tjzj_tjzj.jpg" />
+            <van-image v-if="!i.img" :src="ImgList"/>
           <div class="txt">{{ i.txt }}</div>
           <div class="ico">
             <span>{{ i.from }}</span>
@@ -36,6 +36,9 @@
 export default {
   data() {
     return {
+      ImgList: //模块图片
+        require('../../assets/home/home_tjzj_tjzj.jpg')
+      ,
       HomeTJZJPage3Li: [
         {
           url: "http://mp.weixin.qq.com/s?__biz=MzI2MzA1MjIyNg==&mid=504852376&idx=1&sn=850779cecf72379b3eb345e91855fffc&chksm=71a2013546d588237f621ef504a1818d9b1dad9555082e34a520d9235c94bafde38f3d65386a&mpshare=1&scene=23&srcid=12211cKAu97D1Os1mbOK3b4S&sharer_sharetime=1608514132397&sharer_shareid=f275983526fc34ace88d2215c18a7d7a#rd",

@@ -8,10 +8,12 @@
             width="80px"
             height="80px"
             :src="this.Common.User.headPicture"
+            v-if="this.Common.User.headPicture"
           />
+          <div v-if="!this.Common.User.headPicture" class="img" @click="nameDL">未登录</div>
         </div>
         <div class="wxName">
-          {{ this.Common.User.wxName }}
+          <div v-if="this.Common.User.name">{{ this.Common.User.wxName }}</div>
         </div>
       </div>
     </div>
@@ -74,7 +76,7 @@
       </div>
     </div>
     <div class="page page3" style="display: none">
-      <div class="page3_top">
+      <div class="page3_top page3_top_2">
         <van-icon name="arrow-left" @click="myself_page3_i" />
       </div>
       <div class="page3_body" @scroll="activityScrollMyself">
@@ -118,7 +120,6 @@ export default {
           })
           .catch(() => {
             // on cancel
-            this.$router.push("/Myself");
             return false;
           });
         return false;
@@ -140,7 +141,6 @@ export default {
           })
           .catch(() => {
             // on cancel
-            this.$router.push("/Myself");
             return false;
           });
         return false;
@@ -158,6 +158,9 @@ export default {
     }
   },
   methods: {
+    nameDL() {
+      this.$router.push('/Myself/DJDL');
+    },
     delLogin() {
       Dialog.confirm({
         title: "退出",
@@ -216,7 +219,6 @@ export default {
             })
             .catch(() => {
               // on cancel
-              this.$router.push("/Myself");
               return false;
             });
           return false;
@@ -238,7 +240,6 @@ export default {
             })
             .catch(() => {
               // on cancel
-              this.$router.push("/Myself");
               return false;
             });
           return false;
@@ -289,9 +290,11 @@ export default {
 .myself .page1 {
   position: relative;
   height: 266px;
-  opacity: 0.8;
-  border-radius: 0px 0px 30px 30px/ 6px 6px;
-  background: linear-gradient(#5b86e5, #36d1dc);
+  border-radius: 0px 0px 30px 30px/ 15px 10px;
+  background-image: url("../assets/myself/myself_bg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
 }
 .myself .page1 .content {
   position: absolute;
@@ -309,6 +312,17 @@ export default {
 .myself .page1 .headPicture {
   height: auto;
   width: 100%;
+}
+.myself .page1 .headPicture .img{
+  position: relative;
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  margin: auto;
+  color: #fff;
+  text-align: center;
+  line-height: 86px;
 }
 .myself .page1 .headPicture .van-image {
   border-radius: 50%;
@@ -377,7 +391,16 @@ export default {
   position: fixed;
   width: 100%;
   height: 50px;
-  background: linear-gradient(to right, #5b86e5, #36d1dc);
+  background-image: url("../assets/myself/myself_bg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 266px;
+  -moz-background-size: 100% 266px;
+}
+.page3_top_1{
+  background-position: 0% 100%;
+}
+.page3_top_2{
+  background-position: 0% 0%;
 }
 .myself .page3 .page3_top i {
   color: #fff;

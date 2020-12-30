@@ -34,14 +34,14 @@
         <div class="detail_list">
           <p @click="detail_list_1 = true">团委简介</p>
           <img
-            src="https://www.tencent.com/data/index/index_detail_2.jpg"
+            src="../assets/group/group_detail_1.jpg"
             @click="detail_list_1 = true"
           />
         </div>
         <div class="detail_list">
           <p @click="detail_list_2 = true">部门职责</p>
           <img
-            src="https://www.tencent.com/data/index/index_detail_3.jpg"
+            src="../assets/group/group_detail_2.jpg"
             @click="detail_list_2 = true"
           />
         </div>

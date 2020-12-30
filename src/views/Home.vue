@@ -19,7 +19,7 @@
             round
             width="60px"
             height="60px"
-            src="http://zxlin.top/img/20201216/home_page2_1.jpg"
+            :src="modeImgList[0]"
           />
           <div class="txt">青年之声</div>
         </div>
@@ -30,7 +30,7 @@
             round
             width="60px"
             height="60px"
-            src="http://zxlin.top/img/20201216/home_page2_2.jpg"
+            :src="modeImgList[1]"
           />
           <div class="txt">团聚指尖</div>
         </div>
@@ -42,7 +42,7 @@
             round
             width="60px"
             height="60px"
-            src="http://zxlin.top/img/20201216/home_page2_3.jpg"
+            :src="modeImgList[2]"
           />
           <div class="txt">聚焦城管</div>
         </div>
@@ -84,6 +84,7 @@ export default {
     if (this.$route.path == "/") {
       $(".home .page2 .i").css("display", "none");
       $(".home .page2 .view").css("display", "none");
+      $(".home").attr("style","");
     }
     if (this.$route.path == "/QNZS") {
       $(".home .page2 .i").css("display", "block");
@@ -126,6 +127,7 @@ export default {
       if (this.$route.path == "/") {
         $(".home .page2 .i").css("display", "none");
         $(".home .page2 .view").css("display", "none");
+        $(".home").attr("style","");
       }
       if (this.$route.path == "/QNZS") {
         $(".home .page2 .i").css("display", "block");
@@ -157,6 +159,14 @@ export default {
   data() {
     return {
       show_view_page2_home: false,
+      modeImgList: [//模块图片
+        require('../assets/home/home_page2_1.jpg'),
+        require('../assets/home/home_page2_2.jpg'),
+        require('../assets/home/home_page2_3.jpg'),
+        require('../assets/home/home_qnzs_qnzs.jpg'),
+        require('../assets/home/home_tjzj_tjzj.jpg'),
+        require('../assets/home/home_jjcg_jjcg.jpg'),
+      ],
       HomePage1Swipe: [
         //顶部轮播
         {
